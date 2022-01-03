@@ -1,0 +1,31 @@
+{
+  "name": "get",
+  "version": "1.0.0",
+  "description": "CLI for Node.js Applications",
+  "main": "get.js",
+  "bin": {
+    "get": "./dist/bin/index.js"
+  },
+  "scripts": {
+    "build": "npm run build:src",
+    "build:src": "rimraf dist/ && babel src/ --out-dir dist/ --copy-files",
+    "flush": "rimraf dist/",
+    "global-install": "npm run build && npm uninstall -g get && npm i -g ."
+  },
+  "author": "Harsh Singhi",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^8.2.0",
+    "ejs": "^3.1.6",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.15.7",
+    "@babel/core": "^7.15.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.15.6",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/register": "^7.15.3",
+    "rimraf": "^3.0.2"
+  }
+}
